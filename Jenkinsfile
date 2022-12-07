@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t=docker-image-name .'
+                bat 'docker build -t=madcard31/sample-docker-image .'
             }
         }
         stage('Push Docker Image to Docker Hub') {
@@ -20,7 +20,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_PWD', usernameVariable: 'DOCKER_USR')]) {
                     bat 'docker login -u %DOCKER_USR% -p %DOCKER_PWD%'
                 }
-                bat 'docker push docker-image-name:latest'
+                bat 'docker push madcard31/sample-docker-image:latest'
             }
         }
     } // stages
