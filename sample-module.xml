@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="sample-module" parallel="tests">
+    <test name="sample-1">
+        <parameter name="num" value="3"/>
+        <parameter name="expected" value="9"/>
+        <classes>
+            <class name="com.squares.tests.MultiplyTest"/>
+        </classes>
+    </test>
+    <test name="sample-2">
+        <parameter name="num" value="5"/>
+        <parameter name="expected" value="25"/>
+        <classes>
+            <class name="com.squares.tests.MultiplyTest"/>
+        </classes>
+    </test>
+</suite>
